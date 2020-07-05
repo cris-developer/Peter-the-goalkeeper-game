@@ -8,7 +8,7 @@ If he misses more than 3 balls, his team loses, as they had an advantage of
 ## MVP (DOM - CANVAS)
 - Peter moves from left to right at the bottom of the screen
 - Balls come from above, which is the rival team’s midfield.
-- Birds appear randomly on the left side of the screen.
+
 --------
 ## Backlog
 - Lives (goals scored)
