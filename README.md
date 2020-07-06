@@ -2,7 +2,7 @@
 
 ## Description
 
-Peter has always dreamt of being a Football World Word Champion. This is the world final match but the rival team has the faster football players per second. If he stops all the balls, he win the game. 
+Peter has always dreamt of being a Football World Word Champion. This is the world final match but the rival team has the faster football players per second. If he stops all the balls, he wins the game. 
 
 If he misses more than 3 balls, his team loses, as they had an advantage of 3 goals.
 
@@ -10,62 +10,49 @@ If he misses more than 3 balls, his team loses, as they had an advantage of 3 go
 ## MVP (DOM - CANVAS)
 - Peter moves from left to the right at the left part of the screen, where his goal is.
 - Balls come from the right side, which is the rival team’s midfield. 
-- Player wins if he stops all the balls and losses if he miss just one
+- Player wins if he stops all the balls and losses if he misses just one
 
---------
 
 ## Backlog
 
-- Add score, 
+- Add score
 - Lives (goals scored). He has 3 lives, and can win if he misses 3 balls
 - Sound
 - Timer
 - Add more levels
 - Other soccer fan’s rivals visit him and throw him stones. He must avoid them
-- Add winner screen
+- Add winScreen
 - Increase speed
 
 
 ## Data structure
+Classes and methods definition.
 
-### main.js
-```
-drawSplashScreen(){}
-drawGameScreen(){}
-drawGameOverScreen(){}
-drawWinScreen(){}
+# main.js
 
-Init start
+- buildSplashScreen () {}
+- buildGameScreen () {}
+- buildGameOverScreen () {}
+- buildWinScreen
 
-start Game
+# game.js
 
-### game.js
-```
 Game()
 Constructor {
-
   this.canvas
   this.player
   this.score;
   this.balls;
 
 }
-
  init ()
-
  start ()
- 
+ checkCollisions()
+ setGameOver()
 
-checkCollisions()
-
-setGameOver()
-
-
-
-### Components.js
+# components.js
 
 component{
-
  this.game
  this.x
  this.y
@@ -73,10 +60,10 @@ component{
  this.height,
  this.img
 }
-draw
+Draw
 
-### Player.js
-```
+# player.js
+
 extends Component(){
   this.x;
   this.y;
@@ -84,18 +71,13 @@ extends Component(){
   this.height;
   
 }
-
 draw()
-
-move()
-
+move ()
 update position ()
-
 collision ()
-```
 
-### Balls.js
-```
+# ball.js
+
 extends Component(){
   {
   this.x;
@@ -107,13 +89,19 @@ extends Component(){
 }
 
 draw ()
-
 move ()
-
 update ()
 
+## States y States Transitions
+Definition of the different states and their transition (transition functions)
 
-### Tasks
+- splashScreen
+- gameScreen
+- gameoverScreen
+- winScreen
+
+
+## Task
 
 - main – buildDom
 - main - buildSplahsScreen
@@ -134,43 +122,20 @@ update ()
 - obstacles – update position
 
 
-
-## States and States Transitions
-```
-- splashScreen()
-  - buildSplash()
-  - addEventListener(startGame)
-  
-  
-- startGame()
-  - create new Game()
-  - game.start()
-  
-  
-- gameOver()
-  - buildGameOver()
-  - addEventListener(startGame) 
-```
-
-
 ## Links
 
 
+### Slides
+URls for the project presentation (slides)
+[Link Slides.com](http://slides.com)
 ### Trello
 [Link url] https://trello.com/b/wJrCDEut/peter-the-goalkeeper
 
 
 
-
 ### Git
 URLs for the project repo and deploy
-- [Link Repo](https://github.com) https://github.com/cris-developer/Peter-the-goalkeeper-game
+- [Link Repo] https://github.com/cris-developer/Peter-the-goalkeeper-game
 
 - [Link Deploy](https://githb.com)
-
-
-### Slides
-URLs for the project presentation 
-- [Link Slides](https://docs.google.com)
-
 
