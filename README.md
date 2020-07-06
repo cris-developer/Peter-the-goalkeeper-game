@@ -135,7 +135,8 @@ URls for the project presentation (slides)
 
 ### Git
 URLs for the project repo and deploy
-- [Link Repo] https://github.com/cris-developer/Peter-the-goalkeeper-game
+
+- [Link Repo](http://github.com/cris-developer/Peter-the-goalkeeper-game)
 
 - [Link Deploy](https://githb.com)
 
