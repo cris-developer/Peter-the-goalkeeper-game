@@ -1,0 +1,28 @@
+body {
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+body button {
+    font-size: 30px;
+    background-color: #228B22;
+    color: #fff;
+    padding: 20px 40px;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align:center;
+    display:flex;
+    justify-content: space-around;
+    margin-top:300px;
+    
+}
+
+#gamestartscreen > .btn-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 300px;
+}
