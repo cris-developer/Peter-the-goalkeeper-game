@@ -57,7 +57,7 @@ class Game {
         this.height
       );
     }
-  
+
     drawMainCharacter() {
       this.player.drawComponent("img/Peterleft.png");
     }

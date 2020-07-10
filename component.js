@@ -10,7 +10,7 @@ class Component {
     drawComponent(imgSource) {
       const gameCtx = this.game.ctx;
       this.img.src = imgSource;
-      gameCtx.drawImage(this.img, this.x, this.y, this.width, this.height,this.speed);
+      gameCtx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
   }
   

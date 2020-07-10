@@ -1,4 +1,3 @@
-
 class Obstacle extends Component {
     constructor(game) {
       super(game);
@@ -6,7 +5,6 @@ class Obstacle extends Component {
       this.y = 150;
       this.width = 100;
       this.height = 100;
-      this.speed= 1;
       this.img = new Image();
     }
     draw() {
