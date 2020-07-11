@@ -1,21 +1,23 @@
-class Ball extends Component {
+class Ball2 extends Component {
     constructor(game) {
       super(game);
       this.x = 1200;
-      this.y = 150;
-      this.width = 30;
-      this.height = 30;
+      this.y = 250;
+      this.width = 40;
+      this.height = 40;
       this.img = new Image();
     }
     draw() {
       this.img.src = "img/ball.jpg";
       this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-      console.log("This is ball")
+      console.log("This is ball2")
     }
     move() {
       if (Math.floor(Math.random() * 20) % 3 === 0) {
-        this.x += -20;
+        this.x += -30;
       }
     }
   }
+  
+
   

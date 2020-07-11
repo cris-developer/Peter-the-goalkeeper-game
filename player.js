@@ -25,7 +25,7 @@ class Player extends Component {
       };
     }
   
-    crashCollision(element) {
+    collision(element) {
       //y axis
       if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
         //x axis
