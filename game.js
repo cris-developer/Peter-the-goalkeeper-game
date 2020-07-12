@@ -33,11 +33,11 @@ class Game {
       this.clear();
       this.drawBackground();
       this.drawMainCharacter();
+      this.Peter.move();
       this.drawScore();
       this.drawLives();
       this.drawGameOver();
-      this.Peter.move();
-      this.drawSplashscreen();
+      //this.drawSplashscreen();
       //this.ctx.clearInterval();
       
       for (let i = 0; i < this.ball.length; i++) {
@@ -110,18 +110,6 @@ class Game {
       this.createBall4;
     }, 9000);
   }
-
-  drawSplashscreen (){
-    this.backgroundImg.src = "img/field_background.jpg";
-    this.ctx.drawImage(
-      this.backgroundImg,
-      this.x,
-      this.y,
-      this.width,
-      this.height
-    );
-  }
-  
   drawBackground() {
     this.backgroundImg.src = "img/field_background.jpg";
     this.ctx.drawImage(
@@ -136,6 +124,7 @@ class Game {
 
   drawMainCharacter() {
     this.Peter.drawComponent("img/Peterleft.png");
+    console.log ("Peter esta en porteria")
   }
 
   drawScore() {
@@ -204,6 +193,9 @@ class Game {
   clear() {
     this.ctx.clearRect(this.x, this.y, this.width, this.height);
   }
-}
+  
+  }
+  
+  
 
 

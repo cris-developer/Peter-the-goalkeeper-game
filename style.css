@@ -23,13 +23,13 @@ body button {
     border-radius: 5px;
     margin-bottom: 20px;
     text-align:center;
-    display:flex;
+    display:inline-block;
     justify-content:center;
     margin-top:300px;
     
 }
 
-#background {    
+#splash-background {    
     background-image: url("./img/splashscreen_background.jpg");
     background: cover;
     width: 100%;
@@ -39,31 +39,25 @@ body button {
     z-index: -1;
 } 
 
-#game-splash-screen  .btn-group {
+#game-splash-screen  .Peter {
+    position: absolute;
+    height:60%;
+    left : 500px;
+    margin-top: 6em;
+    z-index: 1;
+}
+ .btn-wrap {
+    display:inline-block;
+    margin-bottom:2em;
+ }
+ .btn-group {
     position: absolute;
     display: flex;
     justify-content: center;
     margin-bottom: 1em;
     margin: 10px;
-   
-}
-/*
-#game-splash-screen  .Peter {
-    position: absolute;
-    height:60%;
-    left : 400px;
-    margin-bottom: 0.5em;
-    z-index: 1;
-}
-*/
-
-#game-splash-screen  .Peter {
-    position: absolute;
-    height:60%;
-    left : 400px;
-    margin-bottom: 0.5em;
-    z-index: 1;
+    position: center top 20%;
+    
 }
 
-    background-repeat: no-repeat;
-    background-position: center  top 20%;   
+

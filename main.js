@@ -10,3 +10,13 @@ window.onload = function () {
     myGame.init();
   }
 };
+/*
+drawSplashscreen (){
+  this.backgroundImg.src = "img/field_background.jpg";
+  this.ctx.drawImage(
+    this.backgroundImg,
+    this.x,
+    this.y,
+    this.width,
+    this.height
+  );*/

@@ -25,10 +25,7 @@ class Player extends Component {
     };
   }
 
-  collision(otherObject) {
-
-    return (((this.x + this.width/2) > otherObject.x && (this.x < (otherObject.x + otherObject.width))) && ((this.y + this.height) > otherObject.y && (this.y < (otherObject.y + otherObject.height))));   
-    /*
+  collision(element) {
     //y axis
     if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
       //x axis
@@ -37,12 +34,7 @@ class Player extends Component {
           alert("Ow");
         }, 5);
         window.location.reload();
-        */
-
       }
     }
-/*
   }
 }
-
-*/
