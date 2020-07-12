@@ -160,10 +160,10 @@ class Game {
 */
   checkCollisions() {
     this.ball.forEach((ball) => {
-      if (ball.collidesWith(this.Peter)) {
+      if (ball.collision(this.Peter)) {
         this.score++;
         this.remove(ball);
-      } else if (ball.collidesWith(this.width)) {
+      } else if (ball.collision(this.width)) {
         this.lives--;
         this.remove(ball);
       }

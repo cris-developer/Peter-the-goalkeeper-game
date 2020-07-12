@@ -25,16 +25,19 @@ class Player extends Component {
     };
   }
 
-  collision(element) {
-    //y axis
-    if (this.y + 10 <= element.y + element.height && this.y >= element.y) {
-      //x axis
-      if (this.x >= element.x && this.x <= element.x + element.width) {
-        setTimeout(() => {
-          alert("Ow");
-        }, 5);
-        window.location.reload();
+  collision(obstacle) {
+
+    if (this.x < obstacle.x +obstacle.width &&
+          this.x + this.width> obstacle.x &&
+          this.y <= obstacle.y + obstacle.heigth &&
+          this.y + this.height >= obstacle.y)  {
+            setTimeout(() => {
+              alert("What a safe Peter!");
+            }, 5);
+            window.location.reload();
+          }
+
+
       }
-    }
   }
-}
+
