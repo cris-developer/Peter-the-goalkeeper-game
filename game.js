@@ -37,6 +37,7 @@ class Game {
       this.drawLives();
       this.drawGameOver();
       this.Peter.move();
+      this.drawSplashscreen();
       //this.ctx.clearInterval();
       
       for (let i = 0; i < this.ball.length; i++) {
@@ -110,6 +111,17 @@ class Game {
     }, 9000);
   }
 
+  drawSplashscreen (){
+    this.backgroundImg.src = "img/field_background.jpg";
+    this.ctx.drawImage(
+      this.backgroundImg,
+      this.x,
+      this.y,
+      this.width,
+      this.height
+    );
+  }
+  
   drawBackground() {
     this.backgroundImg.src = "img/field_background.jpg";
     this.ctx.drawImage(
@@ -129,13 +141,13 @@ class Game {
   drawScore() {
     this.ctx.font='20px Raleway';
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("SCORE: " + this.score, 10,30);
+    this.ctx.fillText("SCORE: " + this.score, 410,30);
   }
 
   drawLives() {
     this.ctx.font='20px Raleway';
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("LIVES: " + this.lives, 315,30);
+    this.ctx.fillText("LIVES: " + this.lives, 615,30);
   }
   
   drawGameOver() {
@@ -144,7 +156,7 @@ class Game {
       this. ctx.font='25px Raleway';
       this.ctx.fillStyle = "black";
       this.ctx.fillText("GAME OVER", 125, 160);
-      this.ctx.fillText( `SCORE: ${this.score}`, 110, 200);
+      this.ctx.fillText( `SCORE: ${this.score}`, 210, 200);
       //this.ctx.fillText("Press SPACE to restart!", 70, 240);
       //this.ctx.clearInterval();
     }
@@ -170,15 +182,12 @@ class Game {
       ball.update(this.ctx);
     });
   }
-  
 
-  
   clearInterval() {
     for (var i = 1; i < 99999; i++) {
       window.clearInterval(i);
     }
   }
-
 
   increaseDifficulty(object) {
     if (this.score >= 5 && this.score < 10) {

@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gamestartscreen" class="gamelayer"></div>
-    <div class="game-intro">
-    <img src="./images/logo.png" alt="" class="logo-img" />
-        <br />
+    <div id="game-splash-screen" class="container">
         <div class="btn-group">
             <div class="btn_wrap">
                 <button id="start-button">StartGame</button>
                 <button id="instructions-button">Instructions</button>
-                <!--<img src="./images/arrows.png" alt="" class="arrows-img" /><-->
             </div>
-        </div>
+        <div>
+        <img class="background" src="./img/splashscreen_background.jpg" alt="Background">
+        <img class="Peter" src="./img/Peter_splashscreen.jpg" alt="Peter">
     </div>
     <div id="game-board">
         <canvas id="canvas" width="1200" height="800"></canvas>
@@ -31,6 +29,5 @@
     <script src="ball2.js"></script>
     <script src="ball3.js"></script>
     <script src="ball4.js"></script>
-
 </body>
 </html>
