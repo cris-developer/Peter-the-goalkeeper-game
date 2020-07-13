@@ -4,14 +4,6 @@ body {
   margin :0;
   padding: 0;
 }
-/*
-body {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-}
-
-*/
 
 body button {
     font-size: 30px;
@@ -23,11 +15,17 @@ body button {
     border-radius: 5px;
     margin-bottom: 20px;
     text-align:center;
-    display:inline-block;
     justify-content:center;
     margin-top:300px;
     
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    padding: 20px 40px;
+} 
 
 #splash-background {    
     background-image: url("./img/splashscreen_background.jpg");
@@ -41,23 +39,35 @@ body button {
 
 #game-splash-screen  .Peter {
     position: absolute;
-    height:60%;
-    left : 500px;
+    height:50%;
+    left :555px;
     margin-top: 6em;
     z-index: 1;
+    
 }
  .btn-wrap {
-    display:inline-block;
-    margin-bottom:2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
  }
+ 
  .btn-group {
     position: absolute;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 1em;
     margin: 10px;
     position: center top 20%;
     
 }
 
+#game-screen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    padding: 20px 40px;
+}
 

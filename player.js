@@ -36,8 +36,6 @@ class Player extends Component {
             }, 5);
             window.location.reload();
           }
-
-
-      }
+    }
   }
 

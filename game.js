@@ -130,13 +130,13 @@ class Game {
   drawScore() {
     this.ctx.font='20px Raleway';
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("SCORE: " + this.score, 410,30);
+    this.ctx.fillText("SCORE: " + this.score, 475,30);
   }
 
   drawLives() {
     this.ctx.font='20px Raleway';
     this.ctx.fillStyle = "white";
-    this.ctx.fillText("LIVES: " + this.lives, 615,30);
+    this.ctx.fillText("LIVES: " + this.lives, 625,30);
   }
   
   drawGameOver() {

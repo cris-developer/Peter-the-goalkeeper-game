@@ -2,7 +2,7 @@ class Ball extends Component {
     constructor(game) {
       super(game);
       this.x = 1200;
-      this.y = 200;
+      this.y = 255;
       this.width = 30;
       this.height = 30;
       //this.dx= -0.01;

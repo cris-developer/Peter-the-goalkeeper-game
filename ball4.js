@@ -2,7 +2,7 @@ class Ball4 extends Component {
     constructor(game) {
       super(game);
       this.x = 1200;
-      this.y = 500;
+      this.y = 520;
       this.width = 30;
       this.height = 30;
       this.img = new Image();
