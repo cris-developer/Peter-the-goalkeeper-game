@@ -5,6 +5,7 @@ body {
   padding: 0;
 }
 
+
 body button {
     font-size: 30px;
     background-color: #228B22;
@@ -24,7 +25,7 @@ body button {
     display: flex;
     flex-direction: row;
     justify-content: center ;
-    padding: 20px 40px;
+   
 } 
 
 #splash-background {    
@@ -40,7 +41,7 @@ body button {
 #game-splash-screen  .Peter {
     position: absolute;
     height:50%;
-    left :555px;
+    left :35em;
     margin-top: 6em;
     z-index: 1;
     
@@ -54,6 +55,13 @@ body button {
     align-content: stretch;
  }
  
+ #game-screen{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    padding: 20px 40px;
+}
+
  .btn-group {
     position: absolute;
     display: flex;
@@ -64,10 +72,5 @@ body button {
     
 }
 
-#game-screen{
-    display: flex;
-    flex-direction: row;
-    justify-content: center ;
-    padding: 20px 40px;
-}
+
 
