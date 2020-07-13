@@ -38,15 +38,7 @@ body button {
     z-index: -1;
 } 
 
-#game-splash-screen  .Peter {
-    position: absolute;
-    height:50%;
-    left :35em;
-    margin-top: 6em;
-    z-index: 1;
-    
-}
- .btn-wrap {
+.btn-wrap {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -54,8 +46,17 @@ body button {
     align-items: center;
     align-content: stretch;
  }
+
+#game-splash-screen  .Peter {
+    position: absolute;
+    height:50%;
+    left :35rem;
+    margin-top: 6rem;
+    z-index: 1;
+    justify-content:left; 
+}
  
- #game-screen{
+#game-screen{
     display: flex;
     flex-direction: row;
     justify-content: center ;
