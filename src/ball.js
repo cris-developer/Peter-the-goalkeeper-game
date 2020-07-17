@@ -5,10 +5,8 @@ class Ball extends Component {
       this.y = 255;
       this.width = 30;
       this.height = 30;
-      //this.dx= -0.01;
+      //this.dx= -2;
       this.img = new Image();
-      //this.sound=
-      this.status = 0;
     }
     draw() {
         this.img.src = "img/ball.jpg";

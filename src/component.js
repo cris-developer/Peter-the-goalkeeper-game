@@ -6,6 +6,8 @@ class Component {
       this.width = w;
       this.height = h;
       this.img = new Image();
+      //this.dx = dx;
+      //this.dy = dy;
     }
     drawComponent(imgSource) {
       const gameCtx = this.game.ctx;
