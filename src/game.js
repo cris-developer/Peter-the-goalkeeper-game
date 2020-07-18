@@ -47,7 +47,6 @@ class Game {
       this.drawLives();
       this.drawGameOver();
       this.checkLives();
-      this.gameOver();
       this.backgroundSound.play();
       this.backgroundSound.volume=0.1;
       //this.checkCollisionPeterBall();
@@ -162,38 +161,42 @@ class Game {
     this.ctx.fillText("LIVES: " + this.lives, 625,30);
   }
   
+  
   drawGameOver() {
     if (this.lives ==0) {
       this.ctx.clearRect(0, 0,canvas.width,canvas.height);
-      this.ctx.font='60px Raleway';
-      this.ctx.fillStyle = "green";
-      this.ctx.fillText("GAME    OVER   ", 125, 160);
-      this.ctx.fillText( `SCORE: ${this.score}`, 210, 200);
-      this.ctx.fillText("Press SPACE to restart!", 70, 240);
-      this.ctx.clearInterval();
+      this.backgroundImg.src = "img/Game over screen.png";
+          this.ctx.drawImage(
+            this.backgroundImg,
+            this.x,
+            this.y,
+            this.width,
+            this.height
+              );
+        this.ctx.font='60px Raleway';
+        this.ctx.fillStyle = "green";
+        //this.ctx.fillText("GAME OVER", 125, 160);
+        this.ctx.fillText( `SCORE: ${this.score}`, 410, 600);
+        //this.ctx.fillText("Press SPACE to restart!", 70, 240);
+        this.ctx.clearInterval();
+        callGameOver();
     }
   }
+
+  drawBackground() {
+          this.backgroundImg.src = "img/field_background.jpg";
+          this.ctx.drawImage(
+            this.backgroundImg,
+            this.x,
+            this.y,
+            this.width,
+            this.height
+              );
+    console.log ("Background piintado")
+  }
+
   
-  gameOver() {
-    if (this.lifes <= 0) {
-      // this.gameOverImg.src = "images/gameover.png";
-      // this.ctx.drawImage(
-      //   this.gameOverImg,
-      //   200,
-      //   200,
-      //   300,
-      //   300
-      // );
-      // this.ctx.clear();
-      // this.ctx.stop();
-      // this.ctx.clearInterval(canvas);
-      // this.backgroundMusic.pause();
-      this.looserSound.volume = 0.2;
-      this.looserSound.play();
-      this.backgroundMusic.pause();
-      callGameOver();
-    }
-  }
+          
 
   checkLives() {
     for (let i = 0; i < this.ball.length; i++) {
@@ -230,7 +233,7 @@ class Game {
           console.log ("COLLISION");
       } 
     }
-  
+
       checkCollisionPeterBall() {
         for (let i = 0; i < this.ball.length; i++) {
           if (this.collision(this.ball,this.Peter)){

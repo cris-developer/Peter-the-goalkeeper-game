@@ -59,6 +59,9 @@ function main () {
     }
    
     function drawGameOverScreen() {
+
+
+      
         gameOverScreen = build(``)
         
         mainContainer.appendChild(gameOverScreen)
