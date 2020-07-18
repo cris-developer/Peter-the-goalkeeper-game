@@ -46,6 +46,8 @@ class Game {
       this.drawScore();
       this.drawLives();
       this.drawGameOver();
+      this.checkLives();
+      this.gameOver();
       this.backgroundSound.play();
       this.backgroundSound.volume=0.1;
       //this.checkCollisionPeterBall();
@@ -62,6 +64,12 @@ class Game {
         //   this.ball.splice(i, 1);
         }
       
+        if (this.lifes <= 0) {
+          this.gameOver();
+          clearInterval(setInterval1);
+        }
+
+
 
       for (let i = 0; i < this.ball2.length; i++) {
         this.ball2[i].move();
@@ -157,15 +165,46 @@ class Game {
   drawGameOver() {
     if (this.lives ==0) {
       this.ctx.clearRect(0, 0,canvas.width,canvas.height);
-      this. ctx.font='25px Raleway';
-      this.ctx.fillStyle = "black";
-      this.ctx.fillText("GAME OVER", 125, 160);
+      this.ctx.font='60px Raleway';
+      this.ctx.fillStyle = "green";
+      this.ctx.fillText("GAME    OVER   ", 125, 160);
       this.ctx.fillText( `SCORE: ${this.score}`, 210, 200);
-      //this.ctx.fillText("Press SPACE to restart!", 70, 240);
-      //this.ctx.clearInterval();
+      this.ctx.fillText("Press SPACE to restart!", 70, 240);
+      this.ctx.clearInterval();
     }
   }
   
+  gameOver() {
+    if (this.lifes <= 0) {
+      // this.gameOverImg.src = "images/gameover.png";
+      // this.ctx.drawImage(
+      //   this.gameOverImg,
+      //   200,
+      //   200,
+      //   300,
+      //   300
+      // );
+      // this.ctx.clear();
+      // this.ctx.stop();
+      // this.ctx.clearInterval(canvas);
+      // this.backgroundMusic.pause();
+      this.looserSound.volume = 0.2;
+      this.looserSound.play();
+      this.backgroundMusic.pause();
+      callGameOver();
+    }
+  }
+
+  checkLives() {
+    for (let i = 0; i < this.ball.length; i++) {
+      if (this.ball[i].x == 0) {
+        this.ball.splice(i, 1);
+        this.lives--;
+      }
+    }
+
+  }
+
   collision(balls){
       let PeterRight =this.Peter.x +this.Peter.width;
       let PeterLeft = this.Peter.x;
@@ -177,11 +216,7 @@ class Game {
       let ballsTop =  balls.y;
       let ballsBottom =balls.y+ balls.height;
 
-      // let colllisionCenter = ballsLeft <= PeterRight && ballsRight >= PeterLeft;
-      // // this.balls.x <= this.Peter.x +this.Peter.width && this.balls.x + this.balls.width >= this.Peter.x
-      // let collisionTop     = ballsBottom >= PeterTop; // this.balls.y +this.balls.height > this.Peter.y
-      // let collisionBottom  = ballsTop <= PeterBottom; // this.balls.y +this.balls.height <  this.Peter.y +this.Peter.height
-      // //let collisionCorners = ballsBottom > PeterTop && ballsRight > PeterLeft && ballsLeft < PeterRight && ballsBottom > PeterTop
+
     
             let collisionLeft = (ballsLeft <= PeterRight) && (ballsLeft >= PeterLeft);
             let collisionRight = (ballsRight >= PeterLeft) && (ballsRight <= PeterRight);
@@ -191,7 +226,7 @@ class Game {
       if ( (collisionRight||collisionLeft) &&  (collisionTop || collisionBottom)) {  
           this.collisionche=true;
           this.score +=1;
-          //this.x = +x
+          
           console.log ("COLLISION");
       } 
     }
@@ -242,8 +277,7 @@ class Game {
               this.catchBallSound.play();
               this.backgroundSound.volume=0.2;
               return this.ball4.splice(i, 1);
-              alert("crash");
-              window.location.reload();
+        
           }
         }
       }
@@ -285,6 +319,3 @@ class Game {
       this.ctx.clearRect(this.x, this.y, this.width, this.height);
     }
 }
-  
-  
-

@@ -18,9 +18,12 @@ function main () {
     function drawSplashScreen() {
         splashScreen = build(`
         <div id="game-splash-screen" class="container">
+          <div class="title">
+          "
+          </div>
             <div class="btn-group">
                   <button id="start-button">StartGame</button>
-                  <button id="instructions-button">Instructions</button>
+                
             </div>
             <div class="images-group">
                 <img class="splash-background" src="./img/splashscreen_background.jpg" alt="Background">
