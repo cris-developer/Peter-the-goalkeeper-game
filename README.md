@@ -138,5 +138,5 @@ URLs for the project repo and deploy
 
 - [Link Repo](http://github.com/cris-developer/Peter-the-goalkeeper-game)
 
-- [Link Deploy](https://githb.com)
+- [Link Deploy] (https://cris-developer.github.io/Peter-the-goalkeeper-game)
 
