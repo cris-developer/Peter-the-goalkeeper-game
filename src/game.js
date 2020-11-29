@@ -4,10 +4,6 @@ class Game {
     this.ctx = undefined;
     this.Peter = new Player(this,30,350, 100, 150);
     this.ball =  [];
-    this.ball2 = [];
-    this.ball3 = [];
-    this.ball4 = [];
-    this.balls = [];
     this.backgroundImg = new Image();
     this.x = 0;
     this.y = 0;
@@ -21,7 +17,8 @@ class Game {
     this.backgroundSound=new Audio ("sound/Soccer_Crowd_Cheer.wav");
     this.catchBallSound=new Audio ("sound/Crowd Happy.mp3");
     this.winnerSound=new Audio ("sound/Queen-We Are The Champions_ Cut.m4a");
-    this.looserSound =new Audio ("sound/Crowd Disappointed.mp3");
+    this.looserSound =new Audio ("sound/Crowd Disappointed.mp3")
+    this.looserSound.volume=0.03;
     
   }
 
@@ -30,9 +27,6 @@ class Game {
     this.ctx = this.canvas.getContext("2d");
     this.start();
     this.createBall();
-    this.createBall2();
-    this.createBall3();
-    this.createBall4();
   }
 
   start() {
@@ -48,90 +42,36 @@ class Game {
       this.drawGameOver();
       this.checkLives();
       this.backgroundSound.play();
-      this.backgroundSound.volume=0.1;
+      this.backgroundSound.volume=0.05;
       //this.checkCollisionPeterBall();
       //this.ctx.clearInterval();
       
       for (let i = 0; i < this.ball.length; i++) {
         this.ball[i].move();
         this.ball[i].draw();
-        this.collision(this.ball[i]);
-        if (this.collisioncheck) {
-          this.ball.splice(i,1);
-        }
-        // if (this.ball[i].x > 800) {
-        //   this.ball.splice(i, 1);
+        this.collision(this.ball[i]); // we remove it from
         }
       
         if (this.lifes <= 0) {
           this.gameOver();
           clearInterval(setInterval1);
         }
-
-
-
-      for (let i = 0; i < this.ball2.length; i++) {
-        this.ball2[i].move();
-        this.ball2[i].draw();
-        this.collision(this.ball2[i]);
-        if (this.ball2[i].y > 800) {
-          this.ball2.splice(i, 1);
-        }
-      }
-      for (let i = 0; i < this.ball3.length; i++) {
-        this.ball3[i].move();
-        this.ball3[i].draw();
-        this.collision(this.ball3[i]);
-        if (this.ball3[i].y > 800) {
-          this.ball3.splice(i, 1);
-        }
-      }
-      for (let i = 0; i < this.ball4.length; i++) {
-        this.ball4[i].move();
-        this.ball4[i].draw();
-        this.collision(this.ball4[i]);
-        if (this.ball4[i].y > 800) {
-          this.ball4.splice(i, 1);
-        }
-      }
+      
     }, 1000 / 60);
   }
 
   createBall() {
-      if (Math.floor(Math.random() * 10) % 2 === 0) {
-        this.ball.push(new Ball(this));
-      }
+     
+        let randomY=Math.random()* (this.height - 500)+ 250
+        this.ball.push(new Ball(this, randomY));
+        
+      
       setTimeout(() => {
         this.createBall();
-      }, 3000);
+      }, Math.random()*3000+500);
   }
 
-  createBall2() {
-    if (Math.floor(Math.random() * 10) % 2 === 0) {
-      this.ball2.push(new Ball2(this));
-    }
-    setTimeout(() => {
-      this.createBall2();
-    }, 5000);
-  }
-
-  createBall3() {
-    if (Math.floor(Math.random() * 10) % 2 === 0) {
-      this.ball3.push(new Ball3(this));
-    }
-    setTimeout(() => {
-      this.createBall3();
-    }, 7000);
-  }
-
-  createBall4() {
-    if (Math.floor(Math.random() * 10) % 2 === 0) {
-      this.ball4.push(new Ball4(this));
-    }
-    setTimeout(() => {
-      this.createBall4;
-    }, 9000);
-  }
+  
   drawBackground() {
     this.backgroundImg.src = "img/field_background.jpg";
     this.ctx.drawImage(
@@ -165,6 +105,8 @@ class Game {
   drawGameOver() {
     if (this.lives ==0) {
       this.ctx.clearRect(0, 0,canvas.width,canvas.height);
+      this.backgroundSound.pause();
+      this.looserSound.play();
       this.backgroundImg.src = "img/Game over screen.png";
           this.ctx.drawImage(
             this.backgroundImg,
@@ -179,6 +121,7 @@ class Game {
         this.ctx.fillText( `SCORE: ${this.score}`, 410, 600);
         //this.ctx.fillText("Press SPACE to restart!", 70, 240);
         this.ctx.clearInterval();
+  
         callGameOver();
     }
   }
@@ -192,12 +135,11 @@ class Game {
             this.width,
             this.height
               );
-    console.log ("Background piintado")
+        
+    console.log ("Background pintado")
   }
 
-  
           
-
   checkLives() {
     for (let i = 0; i < this.ball.length; i++) {
       if (this.ball[i].x == 0) {
@@ -218,8 +160,6 @@ class Game {
       let ballsLeft = balls.x;
       let ballsTop =  balls.y;
       let ballsBottom =balls.y+ balls.height;
-
-
     
             let collisionLeft = (ballsLeft <= PeterRight) && (ballsLeft >= PeterLeft);
             let collisionRight = (ballsRight >= PeterLeft) && (ballsRight <= PeterRight);
@@ -229,76 +169,15 @@ class Game {
       if ( (collisionRight||collisionLeft) &&  (collisionTop || collisionBottom)) {  
           this.collisionche=true;
           this.score +=1;
-          
-          console.log ("COLLISION");
-      } 
+          _.remove(this.ball, (ballEl)=>{
+             return  ballEl.id===balls.id
+          })
+          console.log ("COLLISION FUNCTION");
+           } 
     }
 
-      checkCollisionPeterBall() {
-        for (let i = 0; i < this.ball.length; i++) {
-          if (this.collision(this.ball,this.Peter)){
-              this.score ++;
-              this.catchBallSound.play();
-              this.backgroundSound.volume=0.2;
-              return this.ball.splice(i, 1);
-              //console.log ("CHECK COLLISION BALL")
-          }
-        }
-      }
-
-      checkCollisionPeterBall() {
-        for (let i = 0; i < this.ball2.length; i++) {
-          if (this.collision(this.ball2,this.Peter)){
-              this.score ++;
-              this.catchBallSound.play();
-              this.backgroundSound.volume=0.2;
-              return this.ball2.splice(i, 1);
-              alert("crash");
-              window.location.reload();
-          }
-        }
-      }
-
-
-      checkCollisionPeterBall() {
-        for (let i = 0; i < this.ball3.length; i++) {
-          if (this.collision(this.ball3,this.Peter)){
-              this.score ++;
-              this.catchBallSound.play();
-              this.backgroundSound.volume=0.2;
-              return this.ball3.splice(i, 1);
-              alert("crash");
-              window.location.reload();
-          }
-        }
-      }
-
-      checkCollisionPeterBall() {
-        for (let i = 0; i < this.ball4.length; i++) {
-          if (this.collision(this.ball4,this.Peter)){
-              this.score ++;
-              this.catchBallSound.play();
-              this.backgroundSound.volume=0.2;
-              return this.ball4.splice(i, 1);
-        
-          }
-        }
-      }
 
   
-    checkCollisions() {
-      this.balls.forEach((balls) => {
-        if (balls.collision(this.Peter)) {
-          this.score++;
-          this.remove(balls);
-        } else if (balls.collision(this.width)) {
-          this.lives--;
-          this.remove(balls);
-        }
-        this.increaseDifficulty(balls);
-        balls.update(this.ctx);
-      });
-    }
 
     clearInterval() {
       for (var i = 1; i < 99999; i++) {
