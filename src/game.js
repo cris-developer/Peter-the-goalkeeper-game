@@ -12,8 +12,6 @@ class Game {
     this.score=0;
     this.lives=3;
     this.collisioncheck=false;
-    //this.dx = 0;
-    //this.dy = 0;
     this.backgroundSound=new Audio ("sound/Soccer_Crowd_Cheer.wav");
     this.catchBallSound=new Audio ("sound/Crowd Happy.mp3");
     this.winnerSound=new Audio ("sound/Queen-We Are The Champions_ Cut.m4a");

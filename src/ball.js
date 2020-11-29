@@ -1,6 +1,3 @@
-
-
-
 class Ball extends Component {
     constructor(game,y) {
       super(game);
