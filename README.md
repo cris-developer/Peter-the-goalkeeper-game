@@ -7,6 +7,9 @@ Peter has always dreamt of being a Football World Word Champion. This is the wor
 If he misses more than 3 balls, his team loses, as they had an advantage of 3 goals.
 
 
+[Live Demo](https://cris-developer.github.io/Peter-the-goalkeeper-game)
+
+
 ## MVP (DOM - CANVAS)
 - Peter moves from left to the right at the left part of the screen, where his goal is.
 - Balls come from the right side, which is the rival team’s midfield. 
@@ -138,5 +141,5 @@ URLs for the project repo and deploy
 
 - [Link Repo](http://github.com/cris-developer/Peter-the-goalkeeper-game)
 
-- [Link Deploy] (https://cris-developer.github.io/Peter-the-goalkeeper-game)
+- [Link Deploy](https://cris-developer.github.io/Peter-the-goalkeeper-game)
 
