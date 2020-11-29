@@ -132,7 +132,7 @@ Definition of the different states and their transition (transition functions)
 URls for the project presentation (slides)
 [Link Slides.com](http://slides.com)
 ### Trello
-[Link url]https://trello.com/b/wJrCDEut/peter-the-goalkeeper
+[Link url](https://trello.com/b/wJrCDEut/peter-the-goalkeeper)
 
 
 
