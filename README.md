@@ -10,6 +10,13 @@ If he misses more than 3 balls, his team loses, as they had an advantage of 3 go
 [Live Demo](https://cris-developer.github.io/Peter-the-goalkeeper-game)
 
 
+## Technologies
+
+- HTML
+- CSS
+- Javascript 
+
+
 ## MVP (DOM - CANVAS)
 - Peter moves from left to the right at the left part of the screen, where his goal is.
 - Balls come from the right side, which is the rival team’s midfield. 
